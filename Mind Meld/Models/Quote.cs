@@ -14,9 +14,14 @@ namespace Mind_Meld.Models
         [Required]
         public DateTime QuoteDate { get; set; }
 
-        public string CustomerId { get; set; }
-
+        [Required]
         public DateTime ExpiryDate { get; set; }
+        [Required]
+        public string CustomerId { get; set; }
+        [Required]
+        public string productDescription { get; set; }
+        [Required]
+        public string message { get; set; }
 
     }
 }

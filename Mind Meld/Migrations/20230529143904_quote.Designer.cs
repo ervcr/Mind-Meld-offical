@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Mind_Meld.Areas.Identity.Data;
 
@@ -11,9 +12,10 @@ using Mind_Meld.Areas.Identity.Data;
 namespace Mind_Meld.Migrations
 {
     [DbContext(typeof(DBContextMindMeld))]
-    partial class DBContextMindMeldModelSnapshot : ModelSnapshot
+    [Migration("20230529143904_quote")]
+    partial class quote
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -26,6 +26,7 @@ public class DBContextMindMeld : IdentityDbContext<MindMeldUser>
     public DbSet<Purch_Order> Purch_Order { get; set; }
     public DbSet<Purch_Request> Purch_Request { get; set; }
     public DbSet<Supplier> Supplier { get; set; }
+    public DbSet<Quote> Quote { get; set; }
     public DbSet<PurchRequest> PurchRequest { get; set; }
 
 
