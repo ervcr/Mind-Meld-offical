@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Mind_Meld.Models.Purch_Order>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_PurchEmpLayout.cshtml";
+}
+
+<!--This is a header of our page you can copy and paste it in any new view you create, Let's go!-->
+<div class="content container-fluid">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="page-title mb-0">Purchase Order</h3>
+            </div>
+            <div class="col-md-6">
+                <ul class="breadcrumb mb-0 p-0 float-right">
+                    <li class="breadcrumb-item"> <a asp-controller="Dashbroad" asp-action="PurchEmpDashboard"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="breadcrumb-item"> <a asp-controller="Purch_Order" asp-action="Index"><i></i> Purchase Order</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content container-fluid">
+    @if (TempData["AlertMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["AlertMessage"]
+            <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+        </div>
+    }
+
+    @if (TempData["AlertMessageEdit"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["AlertMessageEdit"]
+            <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+        </div>
+    }
+
+    @if (TempData["AlertMessageDelete"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["AlertMessageDelete"]
+            <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+        </div>
+    }
+
+    <div class="card-header">
+        <h4 class="card-title"></h4>
+        <a class="btn btn-primary btn-sm float-right" asp-controller="Purch_Order" asp-action="Create">Add New</a>
+    </div>
+
+ <table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PurchRequest.PRStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.POTotal)
+            </th>
+            <th>
+                <div>Supplier</div>
+            </th>
+            <th>
+                    <div>Product Order Progress</div>
+            </th>
+            <th>
+                <div>Action</div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PurchRequest.RequestDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.POTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Supplier.Name)
+                </td>
+                    <td>
+                        @if (item.POProgress == "Pending")
+                        {
+                            <span class="badge badge-warning">@Html.DisplayFor(modelItem => item.POProgress)</span>
+                        }
+                        else if (item.POProgress == "Active")
+                        {
+                            <span class="badge badge-success">@Html.DisplayFor(modelItem => item.POProgress)</span>
+                        }
+                        else if (item.POProgress == "Cancelled")
+                        {
+                            <span class="badge badge-danger">@Html.DisplayFor(modelItem => item.POProgress)</span>
+                        }
+                        else if (item.POProgress == "Complete")
+                        {
+                            <span class="badge badge-primary">@Html.DisplayFor(modelItem => item.POProgress)</span>
+                        }
+                        else{
+                            <span class="badge badge-success">@Html.DisplayFor(modelItem => item.POProgress)</span>
+                        }
+                    </td>
+
+                <td>
+                        <button class="btn btn-primary" onclick="location.href='@Url.Action("Edit", new { id = item.OrderID })'">Edit</button>
+                        <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", new { id = item.OrderID })'">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

@@ -1,0 +1,188 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Mind_Meld</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Pages\" />
+    <Folder Include="Views\Purch_Request\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\uploads\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Dept\Create.cshtml" />
+    <None Include="Views\Dept\Delete.cshtml" />
+    <None Include="Views\Dept\Details.cshtml" />
+    <None Include="Views\Dept\Edit.cshtml" />
+    <None Include="Views\Dept\Index.cshtml" />
+    <None Include="Views\Employee\Create.cshtml" />
+    <None Include="Views\Employee\Edit.cshtml" />
+    <None Include="Views\Employee\Index.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
+    <None Include="Views\Product\Create.cshtml" />
+    <None Include="Views\Product\Edit.cshtml" />
+    <None Include="Views\Product\Index.cshtml" />
+    <None Include="Views\Product\ViewProducts.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_AdminLayout.cshtml" />
+    <None Include="Views\Shared\_AdminOneLayout.cshtml" />
+    <None Include="Views\Shared\_Cart.cshtml" />
+    <None Include="Views\Shared\_CustumerLayout.cshtml" />
+    <None Include="Views\Shared\_DeptEmpLayout.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_LoginPartial.cshtml" />
+    <None Include="Views\Shared\_PurchEmpLayout.cshtml" />
+    <None Include="Views\Shared\_SalesEmpLayout.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Views\Supplier\Create.cshtml" />
+    <None Include="Views\Supplier\Delete.cshtml" />
+    <None Include="Views\Supplier\Details.cshtml" />
+    <None Include="Views\Supplier\Edit.cshtml" />
+    <None Include="Views\Supplier\Index.cshtml" />
+    <None Include="Views\Supplier\MaintainSupplier.cshtml" />
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+    <None Include="wwwroot\SideManu\assets\img\arrow.svg" />
+    <None Include="wwwroot\SideManu\assets\js\apexcharts.js" />
+    <None Include="wwwroot\SideManu\assets\js\app.js" />
+    <None Include="wwwroot\SideManu\assets\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\SideManu\assets\js\chart-data.js" />
+    <None Include="wwwroot\SideManu\assets\js\dataTables.bootstrap4.min.js" />
+    <None Include="wwwroot\SideManu\assets\js\form-validation.js" />
+    <None Include="wwwroot\SideManu\assets\js\fullcalendar.min.js" />
+    <None Include="wwwroot\SideManu\assets\js\jquery-3.6.0.min.js" />
+    <None Include="wwwroot\SideManu\assets\js\jquery-ui.min.js" />
+    <None Include="wwwroot\SideManu\assets\js\jquery.dataTables.min.js" />
+    <None Include="wwwroot\SideManu\assets\js\jquery.fullcalendar.js" />
+    <None Include="wwwroot\SideManu\assets\js\jquery.slimscroll.js" />
+    <None Include="wwwroot\SideManu\assets\js\moment.min.js" />
+    <None Include="wwwroot\SideManu\assets\js\popper.min.js" />
+    <None Include="wwwroot\SideManu\assets\js\select2.min.js" />
+    <None Include="wwwroot\SideManu\assets\js\tagsinput.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\alertify\alertify.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\alertify\custom-alertify.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\apexchart\apexcharts.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\apexchart\chart-data.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\c3-chart\c3.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\c3-chart\chart-data.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\c3-chart\d3.v5.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\chartjs\chart-data.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\chartjs\chart.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\clipboard\clipboard.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\countup\jquery.counterup.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\countup\jquery.missofis-countdown.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\countup\jquery.waypoints.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\datetimepicker\js\tempusdominus-bootstrap-4.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\dragula\js\drag-drop.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\dragula\js\dragula.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\fileupload\fileupload.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\flot\chart-data.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\flot\jquery.flot.fillbetween.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\flot\jquery.flot.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\flot\jquery.flot.pie.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\fontawesome\webfonts\fa-brands-400.svg" />
+    <None Include="wwwroot\SideManu\assets\plugins\fontawesome\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\SideManu\assets\plugins\fontawesome\webfonts\fa-regular-400.svg" />
+    <None Include="wwwroot\SideManu\assets\plugins\fontawesome\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\SideManu\assets\plugins\fontawesome\webfonts\fa-solid-900.svg" />
+    <None Include="wwwroot\SideManu\assets\plugins\fontawesome\webfonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\SideManu\assets\plugins\fullcalendar\fullcalendar.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\fullcalendar\jquery.fullcalendar.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\fullcalendar\locale-all.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\icons\weather\fonts\weathericons-regular-webfont.woff2" />
+    <None Include="wwwroot\SideManu\assets\plugins\ion-rangeslider\js\custom-rangeslider.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\ion-rangeslider\js\ion.rangeSlider.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\jquery-ui\jquery-ui.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\lightbox\glightbox.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\lightbox\lightbox.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\material\fonts\Material-Design-Iconic-Font.woff2" />
+    <None Include="wwwroot\SideManu\assets\plugins\material\fonts\materialdesignicons-webfont.woff2" />
+    <None Include="wwwroot\SideManu\assets\plugins\morris\chart-data.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\morris\morris.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\morris\raphael-min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\peity\chart-data.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\peity\jquery.peity.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\raphael\raphael-min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\raty\custom.raty.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\raty\jquery.raty.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\scrollbar\custom-scroll.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\scrollbar\scrollbar.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\select2\js\custom-select.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\select2\js\select2.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\simpleline\fonts\Simple-Line-Icons.woff2" />
+    <None Include="wwwroot\SideManu\assets\plugins\stickynote\sticky.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\summernote\dist\font\summernote.woff2" />
+    <None Include="wwwroot\SideManu\assets\plugins\summernote\dist\summernote-bs4.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\summernote\font\summernote.woff2" />
+    <None Include="wwwroot\SideManu\assets\plugins\summernote\summernote-bs4.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\sweetalert\sweetalert2.all.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\sweetalert\sweetalerts.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\theia-sticky-sidebar\ResizeSensor.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\theia-sticky-sidebar\theia-sticky-sidebar.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\timeline\horizontal-timeline.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\toastr\toastr.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\toastr\toastr.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\twitter-bootstrap-wizard\form-wizard.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\twitter-bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
+    <None Include="wwwroot\SideManu\assets\plugins\twitter-bootstrap-wizard\prettify.js" />
+  </ItemGroup>
+
+</Project>

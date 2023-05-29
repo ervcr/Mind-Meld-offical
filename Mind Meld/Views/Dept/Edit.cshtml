@@ -1,0 +1,70 @@
+﻿@model Mind_Meld.Models.Dept
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!--This is a header of our page you can copy and past it in any new view u create, Lets Goo!-->
+<div class="content container-fluid">
+
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="page-title mb-0">Edit Department Information</h3>
+            </div>
+            <div class="col-md-6">
+                <ul class="breadcrumb mb-0 p-0 float-right">
+                    <li class="breadcrumb-item"> <a asp-controller="Dashbroad" asp-action="AdminDashboard"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="breadcrumb-item"> <a asp-controller="Dept" asp-action="Index"><i></i> Manage Department</a></li>
+                    <li class="breadcrumb-item"> <a asp-controller="Dept" asp-action="Edit"><i></i> Edit Department</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+<div class="content container-fluid">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DeptID" />
+            <div class="form-group">
+                <label asp-for="DeptName" class="control-label"></label>
+                <input asp-for="DeptName" class="form-control" />
+                <span asp-validation-for="DeptName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeptDesc" class="control-label"></label>
+                <textarea asp-for="DeptDesc" class="form-control" rows="5"></textarea>
+                <span asp-validation-for="DeptDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-danger">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+    <!-- This is the footer of our page -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    2023 © MindMeld - Online Shopping
+                </div>
+                <div class="col-md-6">
+                    <div class="text-md-right footer-links d-none d-md-block">
+                        <a href="#">About</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>

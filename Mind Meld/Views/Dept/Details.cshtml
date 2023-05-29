@@ -1,0 +1,66 @@
+﻿@model Mind_Meld.Models.Dept
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!--This is a header of our page you can copy and past it in any new view u create, Lets Goo!-->
+<div class="content container-fluid">
+
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="page-title mb-0">Department Details</h3>
+            </div>
+            <div class="col-md-6">
+                <ul class="breadcrumb mb-0 p-0 float-right">
+                    <li class="breadcrumb-item"> <a asp-controller="Dashbroad" asp-action="AdminDashboard"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="breadcrumb-item"> <a asp-controller="Dept" asp-action="Index"><i></i> Manage Department</a></li>
+                    <li class="breadcrumb-item"> <a asp-controller="Dept" asp-action="Details"><i></i>  Department Details</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <hr />
+    <dl class="content container-fluid">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeptName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeptName)
+        </dd>
+        <dt class = "col-sm-5">
+            @Html.DisplayNameFor(model => model.DeptDesc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DeptDesc)
+        </dd>
+
+    </dl>
+    <div class="content container-fluid">
+        <a asp-action="Edit" asp-route-id="@Model?.DeptID" class="btn btn-primary">Edit</a>
+        <a asp-action="Index" class="btn btn-danger">Back to List</a>
+    </div>
+</div>
+
+<!-- This is the footer of our page -->
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                2023 © MindMeld - Online Shopping
+            </div>
+            <div class="col-md-6">
+                <div class="text-md-right footer-links d-none d-md-block">
+                    <a href="#">About</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+

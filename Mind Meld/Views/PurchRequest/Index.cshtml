@@ -1,0 +1,117 @@
+﻿
+@model IEnumerable<Mind_Meld.Models.PurchRequest>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DeptEmpLayout.cshtml";
+}
+
+<!--This is a header of our page you can copy and paste it in any new view you create, Let's go!-->
+<div class="content container-fluid">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="page-title mb-0">Manage Purchase Request</h3>
+            </div>
+            <div class="col-md-6">
+                <ul class="breadcrumb mb-0 p-0 float-right">
+                    <li class="breadcrumb-item"> <a asp-controller="Dashbroad" asp-action="DeptEmpDashboard"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="breadcrumb-item"> <a asp-controller="PurchRequest" asp-action="Index"><i></i> Manage Purchase Request</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content container-fluid">
+    @if (TempData["AlertMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["AlertMessage"]
+            <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+        </div>
+    }
+
+    @if (TempData["AlertMessageEdit"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["AlertMessageEdit"]
+            <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+        </div>
+    }
+
+    @if (TempData["AlertMessageDelete"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["AlertMessageDelete"]
+            <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+        </div>
+    }
+
+    <div class="card-header">
+        <h4 class="card-title"></h4>
+        <a class="btn btn-primary btn-sm float-right" asp-controller="PurchRequest" asp-action="Create">Add New</a>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.RequestDate)</th>
+               <th>
+                   <div>Employee Name</div>
+               </th>
+                <th>@Html.DisplayNameFor(model => model.PRStatus)</th>
+                <th><div>Action</div></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.RequestDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.User.FirstName)</td>
+                    <td>
+                        @if (item.PRStatus == "Pending")
+                        {
+                            <span class="badge badge-warning">@Html.DisplayFor(modelItem => item.PRStatus)</span>
+                        }
+                        else if (item.PRStatus == "Active")
+                        {
+                            <span class="badge badge-success">@Html.DisplayFor(modelItem => item.PRStatus)</span>
+                        }
+                        else if (item.PRStatus == "Cancelled")
+                        {
+                            <span class="badge badge-danger">@Html.DisplayFor(modelItem => item.PRStatus)</span>
+                        }
+                        else if (item.PRStatus == "Complete")
+                        {
+                            <span class="badge badge-success">@Html.DisplayFor(modelItem => item.PRStatus)</span>
+                        }
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.RequestID">Edit</a>
+                        |
+                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.RequestID">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- This is the footer of our page -->
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                2023 © MindMeld - Online Shopping
+            </div>
+            <div class="col-md-6">
+                <div class="text-md-right footer-links d-none d-md-block">
+                    <a href="#">About</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

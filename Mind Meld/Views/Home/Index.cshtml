@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<Product>
+
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="~/css/images/pexels-mart-production-8434675.jpg" class="d-block w-100" alt="..."height="500vh"width="300%">
+    </div>
+    <div class="carousel-item">
+      <img src="~/uploads/e44e0790-5585-469d-b267-e5552c1c8c11_pexels-dương-nhân-1021145.jpg" class="d-block w-100" alt="..."height="500vh"width="500%">
+    </div>
+    <div class="carousel-item">
+      <img src="~/uploads/0658a39e-1438-4422-aad2-1fda9fa9503b_pexels-loc-dang-2421374.jpg" class="d-block w-100" alt="..."height="500vh"width="500%">
+    </div>
+    <div class="carousel-item">
+      <img src="~/uploads/cfc01900-b08c-4499-a087-a5109ebfbc75_pexels-melvin-buezo-2529148.jpg" class="d-block w-100" alt="..."height="500vh"width="500%">
+    </div>
+    <div class="carousel-item">
+      <img src="~/uploads/e44e0790-5585-469d-b267-e5552c1c8c11_pexels-dương-nhân-1021145.jpg" class="d-block w-100" alt="..."height="500vh"width="500%">
+    </div>
+  </div>
+</div>
+@*<div class="row row-cols-1 row-cols-md-4 g-4">
+    @foreach (var product in Model)
+    {
+        <div class="col">
+            <div class="card h-100">
+                <img src="@Url.Content("~/uploads/" + product.ImagePath)" class="card-img-top" alt="@product.Name" />
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">@product.Description</p>
+                    <p class="card-text">Price: @product.Price</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>*@
+

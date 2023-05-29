@@ -1,0 +1,83 @@
+﻿@model Mind_Meld.Models.Employee
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="~/js/site.js"></script>
+
+<!--This is a header of our page you can copy and past it in any new view u create, Lets Goo!-->
+<div class="content container-fluid">
+
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="page-title mb-0">Add Employee</h3>
+            </div>
+            <div class="col-md-6">
+                <ul class="breadcrumb mb-0 p-0 float-right">
+                    <li class="breadcrumb-item"> <a asp-controller="Dashboard" asp-action="AdminDashboard"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="breadcrumb-item"> <a asp-controller="Employee" asp-action="Index"><i class="fas fa-user"></i> Employee List</a></li>
+                    <li class="breadcrumb-item"> <i class="fas fa-plus"></i> Add Employee</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        <div class="form-group">
+                            <label asp-for="User" class="control-label">User</label>
+                            <select asp-for="User.Id" asp-items="@ViewBag.Users" class="form-control"></select>
+                            <span asp-validation-for="User" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Gender" class="control-label">Gender</label>
+                            <select asp-for="Gender" class="form-control">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="GradeLevel" class="control-label">Grade Level</label>
+                            <input asp-for="GradeLevel" class="form-control" />
+                            <span asp-validation-for="GradeLevel" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                             <label asp-for="DeptID" class="control-label">Department</label>
+                             <select asp-for="DeptID" asp-items="@ViewBag.Departments" class="form-control"></select>
+                             <span asp-validation-for="DeptID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                             <a asp-action="Index" class="btn btn-danger">Back to List</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- This is the footer of our page -->
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                2023 © MindMeld - Online Shopping
+            </div>
+            <div class="col-md-6">
+                <div class="text-md-right footer-links d-none d-md-block">
+                    <a href="#">About</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

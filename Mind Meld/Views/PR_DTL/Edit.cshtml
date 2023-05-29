@@ -1,0 +1,59 @@
+﻿@model Mind_Meld.Models.PR_DTL
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_PurchEmpLayout.cshtml";
+}
+<!--This is a header of our page you can copy and paste it in any new view you create, Let's go!-->
+<div class="content container-fluid">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="page-title mb-0">Edit Process Purchase Request</h3>
+            </div>
+            <div class="col-md-6">
+                <ul class="breadcrumb mb-0 p-0 float-right">
+                    <li class="breadcrumb-item"> <a asp-controller="Dashbroad" asp-action="PurchEmpDashboard"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="breadcrumb-item"> <a asp-controller="PR_DTL" asp-action="Index"><i></i> Process purchase requests</a></li>
+                    <li class="breadcrumb-item"> <a asp-controller="PR_DTL" asp-action="Edit"><i></i> Edit purchase requests</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+<div class="content container-fluid">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PR_DTLid" />
+            <div class="form-group">
+                <label asp-for="RequestID" class="control-label"></label>
+                <select asp-for="RequestID" class="form-control" asp-items="@ViewBag.Requests">
+                    <option value="">-- Select Request ID --</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdID" class="control-label"></label>
+                <select asp-for="ProdID" class="form-control" asp-items="@ViewBag.ProductNames">
+                    <option value="">-- Select Product --</option>
+                </select>
+                <span asp-validation-for="ProdID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Qty" class="control-label"></label>
+                <input asp-for="Qty" class="form-control" type="number" />
+                <span asp-validation-for="Qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-danger">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
